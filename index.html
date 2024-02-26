@@ -4,7 +4,6 @@
 <head>
 	<link rel="manifest" href="/manifest.json">
 	<title>Simple web page</title>
-	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript">
 		var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
 	// replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
@@ -20,7 +19,14 @@
 			s.parentNode.insertBefore(wzrk, s);
 	 })();
 
-	 
+	 clevertap.notifications.push({
+        "titleText":'Would you like to receive Push Notifications?',
+        "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
+        "okButtonText":'Sign me up!',
+        "rejectButtonText":'No thanks',
+        "okButtonColor":'#f28046',
+        "serviceWorkerPath": "/clevertap_sw (2).js"
+    });
 
 	 function myFunction(){
         clevertap.event.push("Product_Viewed Event", {
@@ -30,17 +36,9 @@
         "Email ID": "aditi.ranganathan22@spit.ac.in"
         });
         }
-
-		clevertap.notifications.push({
-        "titleText":'Would you like to receive Push Notifications?',
-        "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
-        "okButtonText":'Sign me up!',
-        "rejectButtonText":'No thanks',
-        "okButtonColor":'#f28046',
-        "serviceWorkerPath": "/clevertap_sw (2).js"
-    });
  
    </script>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
